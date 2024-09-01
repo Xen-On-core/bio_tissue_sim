@@ -53,8 +53,6 @@ phi0 = [0.5 for _ in range(M)]
 C = [[0 for _ in range(M)] for _ in range(T)]
 C0 = [0.5 for _ in range(M)]
 for i in range(M):
-    # s[0][i] = np.exp(-(point[i]+0.5)**10)/2
-    # phi[0][i] = np.exp(-(point[i]-1.5)**4)/2
     s[0][i] = 0.5
     phi[0][i] = 0.5
     C[0][i] = 0.9/(i+1)
@@ -126,17 +124,8 @@ def view2d():
     fig, ax = plt.subplots()
     ax.plot(point[:-2], s[T - 1][:-1])
     ax.plot(point[:-2], C[T - 1][:-1])
-    print(np.max(np.array(s[T - 1][:-1])))
-    #print(np.max(np.array(phi[T - 1][:-1])))
 
 
 view3d()
-
-print('\n')
-
-print(np.max(np.array(s)))
-print(np.min(np.array(s)))
-# print(np.max(np.array(phi)))
-# print(np.min(np.array(phi)))
 
 plt.show()
